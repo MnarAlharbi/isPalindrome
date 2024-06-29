@@ -1,0 +1,14 @@
+function isPalindrome($string) {
+    // Remove all non-alphanumeric characters and convert to lowercase
+    $cleanedString = strtolower(preg_replace("/[^A-Za-z0-9]/", '', $string));
+    
+    // Compare the cleaned string with its reverse
+    return $cleanedString === strrev($cleanedString);
+}
+
+$string1 = "A man, a plan, a canal, Panama!";
+$string2 = "Hello, World!";
+
+echo isPalindrome($string1) ? "True" : "False"; // Outputs: True
+echo "\n";
+echo isPalindrome($string2) ? "True" : "False"; // Outputs: False
